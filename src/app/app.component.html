@@ -1,0 +1,28 @@
+<mat-sidenav-container>
+  <mat-sidenav mode="side" [(opened)]="opened" mat-is-locked-open="#mdMedia('gt-sm')">
+    <mat-nav-list>
+      <a mat-list-item routerLink="main" routerLinkActive="mat-mdc-list-item-active" [routerLinkActiveOptions]="{exact: true}">
+        <mat-icon matListItemIcon> home</mat-icon>
+        <div matListItemTitle>Главная</div>
+      </a>
+      <a mat-list-item routerLink="news" routerLinkActive="mat-mdc-list-item-active" [routerLinkActiveOptions]="{exact: true}">
+        <mat-icon matListItemIcon> feed</mat-icon>
+        <div matListItemTitle>Новости</div>
+      </a>
+      <a mat-list-item routerLink="contacts" routerLinkActive="mat-mdc-list-item-active" [routerLinkActiveOptions]="{exact: true}">
+        <mat-icon matListItemIcon> contacts</mat-icon>
+        <div matListItemTitle>Контакты</div>
+      </a>
+    </mat-nav-list> 
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar-row>
+      <button mat-button (click)="sidenav.toggle()">
+        <mat-icon matListItemIcon > menu</mat-icon>
+      </button>
+      <span> Адаптивный дизайн Side Nav </span>
+    </mat-toolbar-row>
+    <mat-divider></mat-divider>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
